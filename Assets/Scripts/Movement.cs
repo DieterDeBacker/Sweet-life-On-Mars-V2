@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
     AudioSource aSource;
     // This comment has been added to test GitHub functionality
+    // This comment has been re-added to test GitHub functionality some more
     // Start is called before the first frame update
     void Start()
     {
