@@ -64,7 +64,7 @@ public class Movement : MonoBehaviour
 
     void thrustSideways() {
         // thrusting backward
-        if(Input.GetKey(KeyCode.A)){
+        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.Q)){
             ApplyRotation(rotationThrust);
             //rightThrustParticle.Play();
         }
