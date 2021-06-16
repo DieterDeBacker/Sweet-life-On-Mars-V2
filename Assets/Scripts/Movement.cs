@@ -86,6 +86,6 @@ public class Movement : MonoBehaviour
         rb.freezeRotation = true; // freezing rotation when we manually change rotation
         transform.Rotate(Vector3.forward * thrust * Time.deltaTime);
         rb.freezeRotation = false; // unfreezing rotation so phyisics can do their work again
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY; // freezing the x and y rotation, only z rotation allowed
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezePositionZ; // freezing the x and y rotation, only z rotation allowed
     }
 }
