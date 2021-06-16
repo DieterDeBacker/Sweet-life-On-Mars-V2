@@ -1166,6 +1166,22 @@ PrefabInstance:
       propertyPath: moveWithTransform
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1332822115767822248, guid: b82a5400254691740a082d3a4a8c3ea0, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332822115767822248, guid: b82a5400254691740a082d3a4a8c3ea0, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332822115767822248, guid: b82a5400254691740a082d3a4a8c3ea0, type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332822115767822248, guid: b82a5400254691740a082d3a4a8c3ea0, type: 3}
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4142470504769977356, guid: b82a5400254691740a082d3a4a8c3ea0, type: 3}
       propertyPath: m_RootOrder
       value: 7

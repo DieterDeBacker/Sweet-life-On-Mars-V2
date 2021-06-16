@@ -6,13 +6,13 @@ public class Oscillator : MonoBehaviour
 {
 
 
-
     [SerializeField]
     float y;
     [SerializeField]
     float duration;
     [SerializeField]
     float timeOffset = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,10 @@ public class Oscillator : MonoBehaviour
     void startTween(){
         Vector3 startingPos = transform.position;    
         float endPos = startingPos.y + y;
-        transform.DOMoveY(endPos,duration).SetLoops(-1,LoopType.Yoyo).SetDelay(timeOffset).SetEase(Ease.InCubic);
+        transform.DOMoveY(endPos, duration)
+            .SetLoops(-1, LoopType.Yoyo)
+            .SetDelay(timeOffset)
+            .SetEase(Ease.InCubic);
 
     }
 }
