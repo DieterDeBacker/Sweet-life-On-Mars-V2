@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     [SerializeField] ParticleSystem leftThrustParticle;
     [SerializeField] ParticleSystem rightThrustParticle;
 
-    public static bool buttonsEnabled = true;
+    public static bool buttonsEnabled = false;
     
     
     Rigidbody rb;

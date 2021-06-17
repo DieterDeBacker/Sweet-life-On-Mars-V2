@@ -36,15 +36,15 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    public void restartGame(){
+        
+    }
+
     void PauseGame(){
         Time.timeScale = 0; // pausing game
     }
 
     public void ResumeGame(){
         Time.timeScale = 1; // resuming game
-    }
-
-    void DisableSpace(){
-        
     }
 }

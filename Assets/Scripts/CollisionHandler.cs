@@ -10,7 +10,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem succesParticles;
 
     
-    
+    Vector3 rocketStartPos;
+    Quaternion rocketRotationStart;
     Rigidbody rb;
     AudioSource aSource;
 
@@ -25,7 +26,9 @@ public class CollisionHandler : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         aSource = GetComponent<AudioSource>();  
-        meshCol = GetComponent<MeshCollider>();      
+        meshCol = GetComponent<MeshCollider>();
+        rocketStartPos = transform.position; 
+        rocketRotationStart = Quaternion.identity;
     }
 
     void Update()
@@ -52,23 +55,24 @@ public class CollisionHandler : MonoBehaviour
     }
 
     void OnCheatKeyPressed(){
-        if(Input.GetKey(KeyCode.L))
-        {
-            LoadNextLevel();
-        }
-        if(Input.GetKey(KeyCode.C))
-        {
-            DisableEnableCollisions();
-        }
-        if(Input.GetKey(KeyCode.U))
-        {
-           TimerController.instance.StopTimer();
-        }
-        if(Input.GetKey(KeyCode.I)){
-            TimerController.instance.StartTimer();
-        }
-                    
-
+        // if(Input.GetKey(KeyCode.L))
+        // {
+        //     LoadNextLevel();
+        // }
+        // if(Input.GetKey(KeyCode.C))
+        // {
+        //     DisableEnableCollisions();
+        // }
+        // if(Input.GetKey(KeyCode.U))
+        // {
+        //    TimerController.instance.StopTimer();
+        // }
+        // if(Input.GetKey(KeyCode.I)){
+        //     TimerController.instance.StartTimer();
+        // }
+        //  if(Input.GetKey(KeyCode.O)){
+        //     TimerController.instance.showEndTime();
+        // }
     }
 
     private void DisableEnableCollisions()
@@ -104,9 +108,11 @@ public class CollisionHandler : MonoBehaviour
         Invoke("LoadNextLevel", invokeDelay);
     }
     void ReloadLevelOnCrash(){
-        //reload active scene
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        rb.velocity = Vector3.zero; // resetting forces on rocket
+        transform.position = rocketStartPos;
+        transform.rotation = rocketRotationStart;
+        isTransitioning = false;
+        GetComponent<Movement>().enabled = true;
     }
 
     void LoadNextLevel(){
@@ -116,7 +122,8 @@ public class CollisionHandler : MonoBehaviour
         
         //if last scene is reached -> load first level again
         if(totalAmountOfScenes == currentSceneIndex) {
-            SceneManager.LoadScene(0);
+            TimerController.instance.showEndTime();
+
         //otherwise just load next level
         }else {
             SceneManager.LoadScene(nextSceneIndex);
