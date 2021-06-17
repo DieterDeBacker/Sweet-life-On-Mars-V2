@@ -8,6 +8,8 @@ public class Movement : MonoBehaviour
     [SerializeField] ParticleSystem mainThrustParticle;
     [SerializeField] ParticleSystem leftThrustParticle;
     [SerializeField] ParticleSystem rightThrustParticle;
+
+    public static bool buttonsEnabled = false;
     
     
     Rigidbody rb;
@@ -27,8 +29,10 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        thrustUpwards();
-        thrustSideways();
+        if(buttonsEnabled){
+            thrustUpwards();
+            thrustSideways();
+        }
     }
 
     void thrustUpwards(){

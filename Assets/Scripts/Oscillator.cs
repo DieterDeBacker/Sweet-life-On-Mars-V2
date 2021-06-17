@@ -9,6 +9,8 @@ public class Oscillator : MonoBehaviour
     [SerializeField]
     float y;
     [SerializeField]
+    float x;
+    [SerializeField]
     float duration;
     [SerializeField]
     float timeOffset = 0;
