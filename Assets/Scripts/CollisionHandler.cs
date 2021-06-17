@@ -60,6 +60,15 @@ public class CollisionHandler : MonoBehaviour
         {
             DisableEnableCollisions();
         }
+        if(Input.GetKey(KeyCode.U))
+        {
+           TimerController.instance.StopTimer();
+        }
+        if(Input.GetKey(KeyCode.I)){
+            TimerController.instance.StartTimer();
+        }
+                    
+
     }
 
     private void DisableEnableCollisions()
@@ -89,6 +98,8 @@ public class CollisionHandler : MonoBehaviour
         aSource.PlayOneShot(succesSound);
         // Play succes particles on finish
         succesParticles.Play();
+        //Stop timer
+        TimerController.instance.StopTimer();
         // loading next level on succes
         Invoke("LoadNextLevel", invokeDelay);
     }

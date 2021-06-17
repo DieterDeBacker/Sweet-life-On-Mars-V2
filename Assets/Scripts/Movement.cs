@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     [SerializeField] ParticleSystem leftThrustParticle;
     [SerializeField] ParticleSystem rightThrustParticle;
 
-    public static bool buttonsEnabled = false;
+    public static bool buttonsEnabled = true;
     
     
     Rigidbody rb;
@@ -39,6 +39,10 @@ public class Movement : MonoBehaviour
         //thrusting up
         if(Input.GetKey(KeyCode.Space))
         {
+            
+            TimerController.instance.StartTimer();
+            
+            
             StartThrusting();
         }
         else
