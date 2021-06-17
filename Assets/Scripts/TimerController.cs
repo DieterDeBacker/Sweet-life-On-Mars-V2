@@ -17,6 +17,8 @@ public class TimerController : MonoBehaviour
     Canvas can;
     float currentTime;
     bool timerActive = false;
+
+    public static bool isEndScreen = false;
     // Start is called before the first frame update
     void Awake(){
         instance = this;
@@ -50,10 +52,22 @@ public class TimerController : MonoBehaviour
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
         timeCounter.text = "";
         endTime.text = "You saved Elon Musks marriage in this time: " + time.ToString("mm':'ss':'ff");
+        isEndScreen = true;
     }
      public void RestartGame(){
-        Debug.Log("Restarted game");
+        DestroyCurrentUi();
         SceneManager.LoadScene(0);
         can.enabled = false;
+        Movement.buttonsEnabled = false;
+        isEndScreen = false;
+    }
+
+    void DestroyCurrentUi(){
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("UI");
+        Debug.Log(objs);
+         foreach(GameObject go in objs){
+            Destroy(go.GetComponent<DontDestroy>());
+            Destroy(go);
+        }
     }
 }

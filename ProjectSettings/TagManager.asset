@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Friendly
   - UI
+  - EndScreen
   layers:
   - Default
   - TransparentFX

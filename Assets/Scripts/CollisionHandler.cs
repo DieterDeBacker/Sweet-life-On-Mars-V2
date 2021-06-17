@@ -10,8 +10,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem succesParticles;
 
     
-    Vector3 rocketStartPos;
-    Quaternion rocketRotationStart;
+     private Vector3 originalPosition;
+    private Quaternion originalRotation;
     Rigidbody rb;
     AudioSource aSource;
 
@@ -27,8 +27,12 @@ public class CollisionHandler : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         aSource = GetComponent<AudioSource>();  
         meshCol = GetComponent<MeshCollider>();
-        rocketStartPos = transform.position; 
-        rocketRotationStart = Quaternion.identity;
+    }
+
+   void Awake()
+    {
+        this.originalPosition = this.transform.position;
+        this.originalRotation = this.transform.rotation;
     }
 
     void Update()
@@ -70,8 +74,11 @@ public class CollisionHandler : MonoBehaviour
         // if(Input.GetKey(KeyCode.I)){
         //     TimerController.instance.StartTimer();
         // }
-        //  if(Input.GetKey(KeyCode.O)){
+        // if(Input.GetKey(KeyCode.O)){
         //     TimerController.instance.showEndTime();
+        // }
+        // if(Input.GetKey(KeyCode.K)){
+        //     TimerController.instance.RestartGame();
         // }
     }
 
@@ -109,8 +116,9 @@ public class CollisionHandler : MonoBehaviour
     }
     void ReloadLevelOnCrash(){
         rb.velocity = Vector3.zero; // resetting forces on rocket
-        transform.position = rocketStartPos;
-        transform.rotation = rocketRotationStart;
+        rb.angularVelocity = Vector3.zero;
+        this.transform.position = this.originalPosition;
+        this.transform.rotation = this.originalRotation;
         isTransitioning = false;
         GetComponent<Movement>().enabled = true;
     }

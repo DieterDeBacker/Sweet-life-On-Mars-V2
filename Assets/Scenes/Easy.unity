@@ -2883,7 +2883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997503176}
   m_LocalRotation: {x: -0.04798199, y: -0.004497707, z: -0.00021444882, w: 0.99883807}
-  m_LocalPosition: {x: -22.522223, y: 0.55, z: -20}
+  m_LocalPosition: {x: -22.522223, y: 0.45, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 321210332}
@@ -5317,7 +5317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6110891513629455006, guid: 7af4aa6dd06dca04f97a0d6ee35efd9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.55
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 6110891513629455006, guid: 7af4aa6dd06dca04f97a0d6ee35efd9a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6194,7 +6194,7 @@ GameObject:
   - component: {fileID: 1810766723}
   m_Layer: 5
   m_Name: EndScreen
-  m_TagString: Untagged
+  m_TagString: EndScreen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7345,7 +7345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004947338}
   m_LocalRotation: {x: -0.04798199, y: -0.004497707, z: -0.00021444882, w: 0.99883807}
-  m_LocalPosition: {x: -22.522223, y: 0.55, z: -20}
+  m_LocalPosition: {x: -22.522223, y: 0.45, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

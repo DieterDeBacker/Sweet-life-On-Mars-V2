@@ -30,14 +30,14 @@ public class MainMenu : MonoBehaviour
     }
 
     public void OpenMenuInGame(){
-        if(Input.GetKey(KeyCode.Escape)){
+        if(Input.GetKey(KeyCode.Escape) && !TimerController.isEndScreen){
             GetComponent<Canvas>().enabled = true; // showing menu screen
             PauseGame();
         }
     }
 
     public void restartGame(){
-        
+
     }
 
     void PauseGame(){
