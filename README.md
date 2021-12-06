@@ -10,6 +10,7 @@ What steps you need to take BEFORE actually starting to develop your game, becau
 
 ### How to play
 You can play the game just by downloading the zip file, unzipping it and clicking the .exe file. :) (I promise I'm not hacking your computer, or Am I?)
+
 Download: [here](https://github.com/DieterDeBacker/Sweet-life-On-Mars-V2/releases)
 
 ### Credits
