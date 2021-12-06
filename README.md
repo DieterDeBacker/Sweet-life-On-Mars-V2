@@ -16,3 +16,5 @@ Download: [here](https://github.com/DieterDeBacker/Sweet-life-On-Mars-V2/release
 This is the course I took that gave me the knowledge on how to develop this game.
 
 https://www.udemy.com/course/unitycourse2/
+
+On this project I worked together with a friend: [Jasper De Smet](https://github.com/HOGENTJasperDeSmet)
